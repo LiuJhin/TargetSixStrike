@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TargetSixStrike</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="title">六目标射击</div>
+      <div class="controls">
+        <label
+          >难度
+          <select id="difficulty">
+            <option value="large">大</option>
+            <option value="medium" selected>中</option>
+            <option value="small">小</option>
+          </select>
+        </label>
+        <label
+          >时长(秒)
+          <input type="number" id="rounds" min="5" max="600" value="60" />
+        </label>
+        <button id="start">开始</button>
+        <button id="restart" disabled>重开</button>
+      </div>
+    </div>
+    <div class="hud">
+      <div>剩余时间: <span id="hud-remaining">60.0s</span></div>
+      <div>
+        命中: <span id="hud-hits">0</span> Miss:
+        <span id="hud-misses">0</span> 准确率: <span id="hud-acc">0%</span>
+      </div>
+    </div>
+    <div id="game-area">
+      <div id="crosshair"><span class="h"></span><span class="v"></span></div>
+    </div>
+    <div id="summary" class="summary hidden">
+      <div class="summary-card">
+        <div class="summary-title">训练完成</div>
+        <div class="summary-stat">
+          总时长: <span id="sum-duration">0.0s</span>
+        </div>
+        <div class="summary-stat">
+          命中: <span id="sum-hits">0</span> Miss:
+          <span id="sum-misses">0</span> 准确率: <span id="sum-acc">0%</span>
+        </div>
+        <button id="summary-restart">再来一局</button>
+      </div>
+    </div>
+    <script src="https://unpkg.com/three@0.157.0/build/three.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
